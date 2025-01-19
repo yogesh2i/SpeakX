@@ -1,0 +1,31 @@
+@mixin flexbox($align: center, $justify: center, $direction: row){
+   display: flex;
+   align-items: $align;
+   justify-content: $justify;
+   flex-direction: $direction;
+}
+@mixin sm {
+    @media only screen and (min-width: 640px){
+        @content;
+    }
+}
+@mixin md {
+    @media only screen and (min-width: 768px){
+        @content;
+    }
+}
+@mixin m {
+    @media only screen and (min-width: 1024px){
+        @content;
+    }
+}
+@mixin xl {
+    @media only screen and (min-width: 1280px){
+        @content;
+    }
+}
+@mixin xxl {
+    @media only screen and (min-width: 1536px){
+        @content;
+    }
+}

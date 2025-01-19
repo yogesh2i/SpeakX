@@ -1,0 +1,25 @@
+syntax = 'proto3';
+
+message Question {
+    string title = 1;
+    string type = 2;
+}
+
+message GetQuestionResponse {
+    repeated Question questions = 1;
+    bool isMore = 2;
+}
+
+message GetQuestionRequest {
+    string query = 1;
+    int32 page = 2;
+    int32 limit =3;
+    string filter =4;
+}
+
+
+
+service QuestionService {
+    rpc GetQuestions(GetQuestionRequest) returns (GetQuestionResponse) {};
+   
+}

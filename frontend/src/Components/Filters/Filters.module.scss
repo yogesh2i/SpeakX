@@ -1,0 +1,29 @@
+@import '../../mixins';
+
+.filters{
+    margin: 0.7rem 0;
+    div{
+        @include flexbox(center,flex-start,row);
+        gap: 0.5rem;
+        overflow: hidden;
+        overflow-x: auto;
+        button{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            border: 1px solid rgb(165, 119, 165);
+            white-space: nowrap;
+            border-radius: 6px;
+            padding: 0.2rem 0.5rem;
+            cursor: pointer;
+            color: rgb(138, 98, 138);
+            &:hover{
+                border-color: rgb(172, 7, 172);
+                color: rgb(177, 19, 177);
+            }
+            &.current{
+                background-color: purple;
+                color: white;
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,40 @@
+@import '../../mixins';
+
+.questionList{
+    margin: 0.8rem 0;
+    hr{
+        color: grey;
+        margin: 1.5rem 0;
+    }
+}
+.navigationButtons{
+    @include flexbox(center,space-between,row);
+    .left{
+        button{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            border: 1px solid purple;
+            border-radius: 6px;
+            padding: 0.2rem 0.5rem;
+            cursor: pointer;
+            color: purple;
+            margin-right: 1rem;
+            &:not(.disabled):hover{
+                background-color: purple;
+                color: white;
+            }
+            &.disabled{
+                color: grey;
+                border-color: grey;
+            }
+        }
+    }
+    .right{
+        input{
+            width: 2.5rem;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid grey;
+            text-align: center;
+        }
+    }
+}
