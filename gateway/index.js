@@ -9,7 +9,7 @@ const userRouter = require("./question");
 app.use(express.json());
 app.use(cors())
 
-app.use("/user", userRouter);
+app.use("/speakx", userRouter);
 
 
 app.listen(PORT, () => {
