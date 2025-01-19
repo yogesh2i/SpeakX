@@ -11,7 +11,7 @@ export const SearchProvider = ({ children }) => {
  
   useEffect(()=>{
     const searchData = setTimeout(()=>{
-        fetch(`${process.env.REACT_APP_FETCH_URL}/user/questions?limit=${limit}&page=${page}&query=${query}&filter=${filter}`,{
+        fetch(`${process.env.REACT_APP_FETCH_URL}/questions?limit=${limit}&page=${page}&query=${query}&filter=${filter}`,{
         }).then((res)=>{
           return res.json();
         }).then((result)=>{
