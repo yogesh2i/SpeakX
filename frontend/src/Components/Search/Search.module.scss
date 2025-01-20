@@ -1,12 +1,13 @@
 @import '../../mixins';
 
-.query{
+.query {
     width: 100%;
     outline: none;
     border: none;
     border-bottom: 2px solid rgb(187, 186, 186);
     font-size: 1.2rem;
-    @include md{
+
+    @include md {
         font-size: 1.3rem;
     }
 }

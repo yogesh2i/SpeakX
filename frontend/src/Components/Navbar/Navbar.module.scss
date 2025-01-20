@@ -1,39 +1,49 @@
 @import '../../mixins';
-nav{
+
+nav {
     padding: 0.3rem 0.4rem;
     background-color: rgb(240, 229, 240);
     color: black;
     font-size: 1.1rem;
     box-shadow: 2px 2px 2px 2px rgb(231, 214, 227);
-    @include flexbox(center,space-between,row);
-    @include md{
+    @include flexbox(center, space-between, row);
+
+    @include md {
         padding: 0.5rem 1rem;
         font-size: 1.3rem;
     }
-    .left{
-       h3{
-        font-size: 1.4rem;
-        cursor: pointer;
-       }
+
+    .left {
+        h3 {
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
     }
-    .right{
-        .menu{
+
+    .right {
+        .menu {
             display: block;
-            @include md{
+
+            @include md {
                 display: none;
             }
         }
-        ul{
-            @include flexbox(center,space-between,row);
+
+        ul {
+            @include flexbox(center, space-between, row);
             display: none;
-            @include md{
+
+            @include md {
                 display: flex;
             }
+
             gap: 1.5rem;
-            li{
+
+            li {
                 cursor: pointer;
                 list-style: none;
-                &:hover{
+
+                &:hover {
                     color: rgb(185, 48, 167);
                 }
             }

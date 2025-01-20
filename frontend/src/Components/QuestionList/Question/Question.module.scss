@@ -1,4 +1,19 @@
-.type{
+@import '../../../mixins';
+
+.type {
     font-weight: 600;
     margin-bottom: 0.2rem;
+}
+
+.options {
+    @include flexbox(flex-start, center, column);
+    margin: 0.2rem 0;
+
+    li {
+        list-style: none;
+
+        label {
+            margin: 0 0.4rem;
+        }
+    }
 }
