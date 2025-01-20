@@ -1,9 +1,24 @@
 syntax = 'proto3';
 
-message Question {
-    string title = 1;
-    string type = 2;
+
+message Block {
+    string text =1;
+    bool isAnswer =2;
+    bool showInOption =3;
 }
+message Option{
+    string text =1;
+    bool isCorrectAnswer =2;
+}
+message Question{
+    string type = 1;
+    string anagramType = 2;
+    string solution =4;
+    string title =5;
+    repeated Block blocks =6;
+    repeated Option options =7;
+}
+
 
 message GetQuestionResponse {
     repeated Question questions = 1;

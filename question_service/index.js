@@ -2,7 +2,7 @@ const { startGrpcServer, getGrpcServer } = require("./grpc");
 const protoLoader = require("@grpc/proto-loader");
 const grpc = require("@grpc/grpc-js");
 const PROTO_PATH = __dirname + "/protos/question.proto";
-const {  getQuestions } = require("./question");
+const { getQuestions } = require("./question");
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
   keepCase: true,
