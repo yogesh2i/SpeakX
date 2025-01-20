@@ -13,23 +13,18 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 });
 
 const QuestionService = grpc.loadPackageDefinition(packageDefinition).QuestionService;
-const client = new QuestionService(
-  "localhost:50050",
-  grpc.credentials.createInsecure()
-);
+const client = new QuestionService("localhost:50050",grpc.credentials.createInsecure());
 
-router.get("/questions",(req,res)=>{
-   const {query,page=1,limit=10,filter} = req.query;
-   client.getQuestions({query,page,limit,filter},(err,msg)=>{
-     if(err){
-       console.log(err);
-       return res.status(500).json({success: false, msg: "couldnt find any questions"});
-      } else{
-       console.log(msg)
-        return res.status(200).json({success: true, questions: msg.questions, isMore:msg.isMore});
-      
-     }
-   })
+router.get("/questions", (req, res) => {
+  const { query, page = 1, limit = 10, filter } = req.query;
+  client.getQuestions({ query, page, limit, filter }, (err, msg) => {
+    if (err) {
+      return res.status(500).json({ success: false, msg: "couldnt find any questions" });
+    } else {
+      return res.status(200).json({ success: true, questions: msg.questions, isMore: msg.isMore });
+
+    }
+  })
 });
 
 module.exports = router;

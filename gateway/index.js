@@ -5,7 +5,6 @@ const cors = require('cors');
 const userRouter = require("./question");
 
 
-// app.use(requiresAuth);
 app.use(express.json());
 app.use(cors())
 
