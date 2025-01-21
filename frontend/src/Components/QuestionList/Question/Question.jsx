@@ -7,8 +7,8 @@ function McqQuestion({question}){
         <p className={Style.title}>{question.title}</p>
         <ul className={Style.options}>
             {question.options.map((i)=>{
-               return <li>
-                <input type="checkbox" name={question.title} id={i.text} checked={i.isCorrectAnswer}/>
+               return <li key={i.text}>
+                <input type="checkbox" name={question.title} id={i.text} checked={i.isCorrectAnswer} onChange={()=>''}/>
                 <label htmlFor={i.text}>{i.text}</label>
                </li>
             })}
@@ -23,7 +23,7 @@ function AnagQuestion({question}){
         <p className={Style.title}>{question.title}</p>
         <div className={Style.options}>
             {question.blocks.map((i,idx)=>{
-               return  <p>{idx+1}. {i.text}</p>
+               return  <p key={idx+1}>{idx+1}. {i.text}</p>
                
             })}
         </div>

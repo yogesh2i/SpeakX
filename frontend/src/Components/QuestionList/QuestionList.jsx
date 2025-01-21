@@ -27,10 +27,10 @@ export default function QuestionList() {
                 <div className={Style.questionList}>
                     {data.success && data.questions.map((i, idx) => {
                         return (
-                            <>
-                                <Question question={i} key={idx}></Question>
+                            <div key={idx}>
+                                <Question question={i}></Question>
                                 <hr></hr>
-                            </>
+                            </div>
                         )
                     })}
                 </div>
