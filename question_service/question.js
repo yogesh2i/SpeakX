@@ -1,23 +1,19 @@
 const { mongoose } = require("mongoose");
 const { Question } = require("./models/questionModal");
-
+const { mongoUri, db } = require("./lib/urls");
 async function connectMongo() {
     try {
-        await mongoose.connect("mongodb://localhost:27017/Speakx", {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            family: 4,
-        });
+        await mongoose.connect(mongoUri,{dbName: db});
         console.log("Connected to database succesfully");
 
     } catch (error) {
+        console.log(error);
         console.log("Failed to connect database");
     }
 
 }
 
 connectMongo();
-
 
 exports.getQuestions = async function getUser(call, cb) {
     const { query, page, limit, filter } = call.request;
@@ -34,7 +30,6 @@ exports.getQuestions = async function getUser(call, cb) {
 
 
     let response = await Question.find(dbQuery, { _id: 0 }).skip(skip).limit(limit + 1);
-
     if (response.length > limit) {
         response.pop();
         moreData = true;
