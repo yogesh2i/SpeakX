@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
+import { apiUrl } from '../lib/urls';
 
 export const SearchContext = createContext();
 
@@ -11,7 +12,7 @@ export const SearchProvider = ({ children }) => {
 
   useEffect(() => {
     const searchData = setTimeout(() => {
-      fetch(`${process.env.REACT_APP_FETCH_URL}/questions?limit=${limit}&page=${page}&query=${query}&filter=${filter}`)
+      fetch(`${apiUrl}/questions?limit=${limit}&page=${page}&query=${query}&filter=${filter}`)
         .then((res) => {
           return res.json();
         }).then((result) => {
