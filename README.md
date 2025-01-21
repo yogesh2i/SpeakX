@@ -14,4 +14,5 @@
 <p>This folder is for question service</p>
 <p>Checkin to question_service folder</p>
 <p>install required packages and dependencies using npm install</p>
+<p>Update mongouri and dbName under /lib/urls.js</p>
 <p>use command - node index.js</p>
