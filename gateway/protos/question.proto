@@ -1,5 +1,6 @@
 syntax = 'proto3';
 
+
 message Block {
     string text =1;
     bool isAnswer =2;
@@ -19,7 +20,6 @@ message Question{
 }
 
 
-
 message GetQuestionResponse {
     repeated Question questions = 1;
     bool isMore = 2;
@@ -32,9 +32,17 @@ message GetQuestionRequest {
     string filter =4;
 }
 
+message PostQuestionRequest{
+  string title =1;
+  string type =2;
+}
 
+message PostQuestionResponse{
+    string msg = 1;
+}
 
 service QuestionService {
     rpc GetQuestions(GetQuestionRequest) returns (GetQuestionResponse) {};
+    rpc PostQuestions(PostQuestionRequest) returns (PostQuestionResponse) {};
    
 }

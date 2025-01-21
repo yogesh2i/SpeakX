@@ -32,9 +32,17 @@ message GetQuestionRequest {
     string filter =4;
 }
 
+message PostQuestionRequest{
+  string title =1;
+  string type =2;
+}
 
+message PostQuestionResponse{
+    string msg = 1;
+}
 
 service QuestionService {
     rpc GetQuestions(GetQuestionRequest) returns (GetQuestionResponse) {};
+    rpc PostQuestions(PostQuestionRequest) returns (PostQuestionResponse) {};
    
 }
