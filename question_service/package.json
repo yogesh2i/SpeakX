@@ -13,6 +13,7 @@
     "@grpc/grpc-js": "^1.6.9",
     "@grpc/proto-loader": "^0.7.0",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^8.9.5",
     "pg": "^8.7.3"
