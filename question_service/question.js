@@ -15,7 +15,19 @@ async function connectMongo() {
 
 connectMongo();
 
-exports.getQuestions = async function getUser(call, cb) {
+exports.postQuestions = async function postQuestion(call,cb){
+  const data = call.request;
+  try {
+      const question = await Question(data);
+      question.save();
+      return cb(null,{msg: "added successfully"});
+  } catch (error) {
+    console.log(error.message)
+    return cb(error,{msg: error.message});
+  }
+}
+
+exports.getQuestions = async function getQuestion(call, cb) {
     const { query, page, limit, filter } = call.request;
     const skip = (page - 1) * (limit);
     let moreData = false;

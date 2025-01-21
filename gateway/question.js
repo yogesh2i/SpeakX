@@ -27,4 +27,20 @@ router.get("/questions", (req, res) => {
   })
 });
 
+router.post("/add",(req,res)=>{
+  try {
+    const data = req.body;
+    client.postQuestions(data,(err,msg)=>{
+      if(err){
+        return res.status(500).json({success: false,msg: msg});
+      }else{
+        return res.status(201).json({success: true});
+      }
+    })
+    
+  } catch (error) {
+    return res.status(500).json({success: false,msg: "Failed to post"});
+  } 
+})
+
 module.exports = router;
