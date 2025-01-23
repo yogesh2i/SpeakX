@@ -18,7 +18,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://smazmi.github.io/SpeakX",
+  "homepage": "https://yogesh2i.github.io/SpeakX",
   "eslintConfig": {
     "extends": [
       "react-app",
