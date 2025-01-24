@@ -38,8 +38,28 @@ To Visit App:
 
 
 
-<h1>Gateway</h1>
-# Show Accessible Data
+<h1>API Gateway Setup</h1>
+
+
+## Installation and Setup Instructions
+ 
+
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
+
+Installation:
+
+`npm install`  
+
+
+To Start Server:
+
+`node index.js`  
+
+To Visit:
+
+`localhost:5001/speakx/questions`  
+
+Example url: http://localhost:5001/speakx/questions?limit=2&page=1&query=breakfast&filter=All
 
 Show questions related to query with applied filters.
 
@@ -110,6 +130,21 @@ filter = String (Question filters by type. Can be --All, MCQ, READ_ALONG, CONTEN
     }
 ],
 "isMore": true
+}
+```
+
+## Error Response
+
+**Condition** : If Server Fails.
+
+**Code** : `500`
+
+**Content** :
+
+```json
+{
+   "success": false,
+   "msg": "couldn't find any questions"
 }
 ```
 
