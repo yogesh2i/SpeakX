@@ -1,3 +1,5 @@
+<p>Note: For easy access readme for all folders is provided here. Later will be moved to their respective folders.</p>
+
 <h1>SetUp FrontEnd</h1>
 
 QuestSearch 
