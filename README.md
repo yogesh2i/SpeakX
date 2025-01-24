@@ -6,7 +6,7 @@ An application used to filter and search questions, built with React, JavaScript
 
 <h3>Project status</h3>
 
-This project is currently in development. Users can filter questions by filters. Functionality to sort by additional parameters is in progress.
+This project is currently in development. Users can filter questions by question type filters and search questions based on title. Functionality to sort by additional parameters is in progress.
 
 
 ## Installation and Setup Instructions
@@ -29,6 +29,12 @@ To Start Server:
 To Visit App:
 
 `localhost:3000`  
+
+<h5>Working Images</h5>
+![image](https://github.com/user-attachments/assets/dc302116-4f5b-4455-bcb3-cfdadce40ba4)
+
+
+
 
 
 <h1>Gateway</h1>
