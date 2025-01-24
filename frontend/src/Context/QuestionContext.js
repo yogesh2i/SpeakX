@@ -10,6 +10,7 @@ export const SearchProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState("All");
 
+  //debouncing fetching --can be modified as hook for more flexible use 
   useEffect(() => {
     const searchData = setTimeout(() => {
       fetch(`${apiUrl}/questions?limit=${limit}&page=${page}&query=${query}&filter=${filter}`)

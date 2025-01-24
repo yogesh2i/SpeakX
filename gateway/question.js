@@ -17,6 +17,7 @@ const client = new QuestionService("localhost:50050",grpc.credentials.createInse
 
 router.get("/questions", (req, res) => {
   const { query, page = 1, limit = 10, filter } = req.query;
+  //calling grpc service to fetch questions
   client.getQuestions({ query, page, limit, filter }, (err, msg) => {
     if (err) {
       return res.status(500).json({ success: false, msg: "couldnt find any questions" });
@@ -30,6 +31,7 @@ router.get("/questions", (req, res) => {
 router.post("/add",(req,res)=>{
   try {
     const data = req.body;
+    //calling grpc service to post questions
     client.postQuestions(data,(err,msg)=>{
       if(err){
         return res.status(500).json({success: false,msg: msg});
