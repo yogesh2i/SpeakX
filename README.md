@@ -1,12 +1,13 @@
 <h1>SetUp FrontEnd</h1>
 
-QuestSearch
+QuestSearch 
 
 An application used to filter and search questions, built with React, JavaScript, and SCSS.
 
 <h3>Project status</h3>
 
 This project is currently in development. Users can filter questions by question type filters and search questions based on title. Functionality to sort by additional parameters is in progress.
+[Checkout Live working here](https://yogesh2i.github.io/SpeakX/)
 
 
 ## Installation and Setup Instructions
