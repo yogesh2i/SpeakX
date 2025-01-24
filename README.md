@@ -39,10 +39,75 @@ To Visit App:
 
 
 <h1>Gateway</h1>
-<p>This folder is for API server</p>
-<p>Checkin to gateway folder</p>
-<p>install required packages and dependencies using npm install</p>
-<p>use command - node index.js</p>
+# Show Accessible Data
+
+Show questions related to query with applied filters.
+
+**URL** : `/speakx/questions`
+
+**Method** : `GET`
+
+**Auth required** : NO
+
+**Query Params: 
+query = String (Question title user want to search)
+limit = Integer (No. of questions per page)
+page = Integer (Page No.)
+filter = String (Question filters by type. Can be --All, MCQ, READ_ALONG, CONTENT_ONLY, ANAGRAM) 
+
+
+**Permissions required** : None
+
+**Data constraints** : `{}`
+
+## Success Responses
+
+**Condition** : User can not see any questions.
+
+**Code** : `200 OK`
+
+**Content** : `{"success": true, "questions": [], "isMore": false}`
+
+### OR
+
+**Condition** : User can see one or more questions.
+
+**Code** : `200 OK`
+
+**Content** : In this example, the User can see questions based on filter:
+
+```json
+{
+  "success": true,
+  "questions": [
+    {
+      "blocks": [
+        {
+          "text": "T",
+          "isAnswer": true,
+          "showInOption": true
+        },
+        {
+          "text": "O",
+          "isAnswer": true,
+          "showInOption": true
+        },
+        {
+          "text": "Y",
+          "isAnswer": true,
+          "showInOption": true
+        }
+      ],
+      "options": [],
+      "type": "ANAGRAM",
+      "anagramType": "WORD",
+      "solution": "TOY",
+      "title": "Rearrange the letters to form a word"
+    }
+],
+"isMore": true
+}
+```
 
 <h1>Question Service(gRPC)</h1>
 <p>This folder is for question service</p>
