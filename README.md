@@ -49,10 +49,14 @@ Show questions related to query with applied filters.
 
 **Auth required** : NO
 
-**Query Params: 
+**Query Params**: 
+
 query = String (Question title user want to search)
+
 limit = Integer (No. of questions per page)
+
 page = Integer (Page No.)
+
 filter = String (Question filters by type. Can be --All, MCQ, READ_ALONG, CONTENT_ONLY, ANAGRAM) 
 
 
