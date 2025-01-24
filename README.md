@@ -149,8 +149,19 @@ filter = String (Question filters by type. Can be --All, MCQ, READ_ALONG, CONTEN
 ```
 
 <h1>Question Service(gRPC)</h1>
-<p>This folder is for question service</p>
-<p>Checkin to question_service folder</p>
-<p>install required packages and dependencies using npm install</p>
-<p>Update mongouri and dbName under /lib/urls.js</p>
-<p>use command - node index.js</p>
+
+## Installation and Setup Instructions
+ 
+
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
+
+Installation:
+
+`npm install`  
+ 
+
+To Start Server:
+
+`node index.js`  
+ 
+
