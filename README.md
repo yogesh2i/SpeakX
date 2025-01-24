@@ -159,6 +159,11 @@ Installation:
 
 `npm install`  
  
+Edit /lib/urls.js to add mongoUri and db name.
+
+**Requirement**: Data should be uploaded beforehand using questions.json.
+
+**Project status**: API and interface will be available soon to upload new questions.
 
 To Start Server:
 
