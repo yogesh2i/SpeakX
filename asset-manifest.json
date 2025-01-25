@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/SpeakX/static/css/main.ceeb89d4.css",
-    "main.js": "/SpeakX/static/js/main.c85629dc.js",
+    "main.js": "/SpeakX/static/js/main.a108203c.js",
     "static/js/488.e75445ad.chunk.js": "/SpeakX/static/js/488.e75445ad.chunk.js",
     "index.html": "/SpeakX/index.html",
     "main.ceeb89d4.css.map": "/SpeakX/static/css/main.ceeb89d4.css.map",
-    "main.c85629dc.js.map": "/SpeakX/static/js/main.c85629dc.js.map",
+    "main.a108203c.js.map": "/SpeakX/static/js/main.a108203c.js.map",
     "488.e75445ad.chunk.js.map": "/SpeakX/static/js/488.e75445ad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ceeb89d4.css",
-    "static/js/main.c85629dc.js"
+    "static/js/main.a108203c.js"
   ]
 }
