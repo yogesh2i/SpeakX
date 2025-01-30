@@ -1,18 +1,19 @@
-import Style from './App.module.scss';
-import Filters from './Components/Filters/Filters';
+import Question from './Components/AddComponent/Question';
 import Navbar from './Components/Navbar/Navbar';
-import QuestionList from './Components/QuestionList/QuestionList';
-import Search from './Components/Search/Search';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Home from './Home/Home';
 
 function App() {
   return (
     <>
+       <BrowserRouter>
        <Navbar></Navbar>
-       <main className={Style.main}>
-        <Search></Search>
-        <Filters></Filters>
-       <QuestionList></QuestionList>
-       </main>
+       <Routes>
+        <Route path='/SpeakX' element={<Home/>}></Route>
+       <Route path={"/add"} element={<Question></Question>}></Route>
+       
+       </Routes>
+       </BrowserRouter>
     </>
   );
 }
