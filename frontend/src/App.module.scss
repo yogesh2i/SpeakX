@@ -1,21 +1,2 @@
-@import './mixins';
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-.main{
-  margin: 0.5rem auto;
-  width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  border-radius: 0.2rem;
-  padding: 0.5rem;
-  @include sm{
-    margin: 2rem auto;
-    width: 80vw;
-    padding: 1rem;
-
-  }
-}
