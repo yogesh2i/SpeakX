@@ -1,0 +1,59 @@
+@import '../../mixins';
+
+.navigation{
+    @include flexbox(center,space-between,row);
+    width: 100%;
+    padding: 1rem 0.2rem;
+    @include sm{
+        padding-top: 2rem;
+        margin: auto;
+        width: 50%;
+    }
+    button{
+        padding: 0.6rem 0.8rem;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border: 1px solid purple;
+        border-radius: 6px;
+        cursor: pointer;
+        color: purple;
+        &:hover{
+            background-color: purple;
+            color: white;
+
+        }
+        a{
+            color: inherit;
+          text-decoration: none;
+        }
+
+    }
+}
+.form{
+    margin: 0.5rem auto;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    @include flexbox(flex-start, flex-start,column);
+    gap: 0.5rem;
+    @include sm{
+      margin: 2rem auto;
+      width: 50%;
+      padding: 1rem;
+  
+    }
+    .heading{
+        display: block;
+        font-weight: 700;
+    }
+    .types{
+        @include flexbox(flex-start,center,column);
+    }
+    .mcqOption{
+        list-style: none;
+        margin: 0.2rem;
+        input{
+            padding: 0.1rem;
+        }
+    }
+  }
