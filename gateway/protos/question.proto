@@ -33,8 +33,12 @@ message GetQuestionRequest {
 }
 
 message PostQuestionRequest{
-  string title =1;
-  string type =2;
+  string type = 1;
+    string anagramType = 2;
+    string solution =4;
+    string title =5;
+    repeated Block blocks =6;
+    repeated Option options =7;
 }
 
 message PostQuestionResponse{
