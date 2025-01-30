@@ -73,13 +73,17 @@ Show questions related to query with applied filters.
 
 **Query Params**: 
 
-query = String (Question title user want to search)
+<ul>
 
-limit = Integer (No. of questions per page)
+<li>query = String (Question title user want to search)</li>
 
-page = Integer (Page No.)
+<li>limit = Integer (No. of questions per page)</li>
 
-filter = String (Question filters by type. Can be --All, MCQ, READ_ALONG, CONTENT_ONLY, ANAGRAM) 
+<li>page = Integer (Page No.)</li>
+
+<li>filter = String (Question filters by type. Can be --All, MCQ, READ_ALONG, CONTENT_ONLY, ANAGRAM)</li>
+
+</ul>
 
 
 **Permissions required** : None
@@ -163,6 +167,10 @@ Installation:
  
 Edit /lib/urls.js to add mongoUri and db name.
 
+OR
+
+Add MONGO_URI,DB_NAME in .env
+
 **Requirement**: Data should be uploaded beforehand using questions.json.
 
 **Project status**: API and interface will be available soon to upload new questions.
@@ -171,7 +179,7 @@ To Start Server:
 
 `node index.js`  
 
-**Sample Protos **
+**Sample Protos**
 <img src="./frontend_sample.png"/>
  <img src="./backend_ssample.png"/>
 
