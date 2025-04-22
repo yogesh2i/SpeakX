@@ -1,8 +1,10 @@
 const grpc = require("@grpc/grpc-js");
 const server = new grpc.Server();
+require('dotenv').config();
+const PORT = process.env.PORT;
 
 exports.startGrpcServer = function () {
-  server.bindAsync("127.0.0.1:50050",grpc.ServerCredentials.createInsecure(),(error, port) => {
+  server.bindAsync(`question_service:${PORT}`,grpc.ServerCredentials.createInsecure(),(error, port) => {
       if (error){
         console.error(error);
       }

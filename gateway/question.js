@@ -1,4 +1,5 @@
 const express = require("express");
+require('dotenv').config();
 const router = express.Router();
 
 const protoLoader = require("@grpc/proto-loader");
@@ -13,7 +14,7 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 });
 
 const QuestionService = grpc.loadPackageDefinition(packageDefinition).QuestionService;
-const client = new QuestionService("localhost:50050",grpc.credentials.createInsecure());
+const client = new QuestionService(`${process.env.QUESTION_SERVICE_URL}`,grpc.credentials.createInsecure());
 
 router.get("/questions", (req, res) => {
   const { query, page = 1, limit = 10, filter } = req.query;
@@ -34,7 +35,7 @@ router.post("/add",(req,res)=>{
     //calling grpc service to post questions
     client.postQuestions(data,(err,msg)=>{
       if(err){
-        return res.status(500).json({success: false,msg: msg});
+        return res.status(400).json({success: false,msg: err.message});
       }else{
         return res.status(201).json({success: true});
       }

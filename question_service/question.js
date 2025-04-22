@@ -28,12 +28,11 @@ connectMongo(mongoUri,db);
 exports.postQuestions = async function postQuestion(call,cb){
   const data = call.request;
   try {
-      const question = await Question(data);
-      question.save();
-      return cb(null,{msg: "added successfully"});
+      const question = new Question(data);
+      await question.save();
+      return cb(null,{msg: "Added Successfully"});
   } catch (error) {
-    console.log(error.message)
-    return cb(error,{msg: error.message});
+    return cb(error,null);
   }
 }
 

@@ -1,0 +1,33 @@
+# # Use Node.js as the base image
+# FROM node:18-alpine
+
+# # Set working directory
+# WORKDIR /app
+
+# # Copy package.json and install dependencies
+# COPY package.json package-lock.json ./
+# RUN npm install
+
+# # Copy the rest of the app
+# COPY . .
+
+# # Start the backend server
+# CMD ["node", "index.js"]
+
+# # Expose the backend port
+# EXPOSE 5001
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN sed -i 's/localhost:50050/question_service:50050/g' question.js
+
+EXPOSE 5001
+
+CMD ["node", "index.js"]

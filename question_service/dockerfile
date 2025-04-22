@@ -1,0 +1,39 @@
+# # Use Node.js as the base image
+# FROM node:18-alpine
+
+# # Set working directory
+# WORKDIR /app
+
+# # Copy package.json and install dependencies
+# COPY package.json package-lock.json ./
+# RUN npm install
+
+# # Copy the rest of the app
+# COPY . .
+
+# # Start the gRPC service
+# CMD ["node", "index.js"]
+
+# # Expose the gRPC service port
+# EXPOSE 50051
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy rest of the application
+COPY . .
+
+# Update the gRPC server to listen on 0.0.0.0 instead of localhost
+# RUN sed -i 's/127.0.0.1:50050/0.0.0.0:50050/g' grpc.js
+
+# Expose the gRPC port
+EXPOSE 50050
+
+# Start the service
+CMD ["node", "index.js"]

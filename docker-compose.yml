@@ -1,0 +1,94 @@
+# version: '3.9'
+
+# services:
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - gateway  
+#     environment:
+#       - REACT_APP_FETCH_URL = https://yoyoyogesh.3bitdevs.tech/speakx
+#     networks:
+#       - app-network
+
+#   gateway:
+#     build: ./gateway
+#     ports:
+#       - "5001:5001"
+#     depends_on:
+#       - question_service
+#     environment:
+#       - QUESTION_SERVICE_URL=question_service:50051
+#       - PORT=5001
+#     networks:
+#       - app-network
+
+#   question_service:
+#     build: ./question_service
+#     ports:
+#       - "50051:50051"  
+#     environment:
+#       - MONGO_URI = mongodb+srv://yogesh1221:mongo123@speakx.i2rgj.mongodb.net/?retryWrites=true&w=majority
+#       - DB_NAME = Speakx
+#       - PORT= 50051
+#     networks:
+#       - app-network
+
+
+
+# networks:
+#   app-network:
+#     driver: bridge
+services:
+  question_service:
+    build: 
+      context: ./question_service
+      dockerfile: Dockerfile
+    container_name: question_service
+    restart: always
+    environment:
+      - MONGO_URI=mongodb+srv://yogesh1221:mongo123@speakx.i2rgj.mongodb.net/?retryWrites=true&w=majority
+      - DB_NAME=Speakx
+      - PORT=50050
+    networks:
+      - speakx-network
+    volumes:
+      - ./questions.json:/app/questions.json
+    ports:
+      - "50050:50050"
+
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: gateway
+    restart: always
+    depends_on:
+      - question_service
+    ports:
+      - "5001:5001"
+    environment:
+      - QUESTION_SERVICE_URL=question_service:50050
+      - PORT=5001
+    networks:
+      - speakx-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    restart: always
+    depends_on:
+      - gateway
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_FETCH_URL=http://localhost:5001/speakx
+    networks:
+      - speakx-network
+
+networks:
+  speakx-network:
+    driver: bridge
