@@ -5,7 +5,7 @@ export default function Navbar() {
     <>
       <nav>
         <div className={Style.left}>
-          <h3>QuestSearc</h3>
+          <h3>QuestSearch</h3>
         </div>
         <div className={Style.right}>
           <div className={Style.menu}>Menu</div>
